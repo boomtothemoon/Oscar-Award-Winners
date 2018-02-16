@@ -4,7 +4,7 @@ class ProducersController < ApplicationController
   # GET /producers
   # GET /producers.json
   def index
-    @producers = Producer.all
+    @producers = Producer.all.page(params[:page]).per_page(10)
   end
 
   # GET /producers/1
