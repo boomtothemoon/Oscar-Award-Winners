@@ -1,0 +1,41 @@
+<h1>About the Page</h1>
+<p>
+I have 2 data sources. 1 comes from a csv file and 1 from a Faker. 
+The csv file contains male and female Oscar Award winners from 1928 to 2016 and the Faker is just any name to be assigned to producer.
+</p>
+<p>
+For the structure of my database, I will have four main tables. Award table which contains the year from 1928 to 2016, Winner table which contains the actor and actress, Movie table which contains the name of the movie and Producer table which contains the name of the producer.
+</p>
+<p>
+For the relationship, a year(Award Table) can have many Oscar winners (Winners Table) and many oscar winners can win oscard in many years so it is a many-to-many relationship between Award Table and Winner Table. Same thing for Producer table and Movie Table because a producer can produce many movie and a movie can have many producer.
+</p>
+<p>
+I normalized the many to many relationship by creating two new tables. Movie Producer Table to normalize Producer table and Movie table's many to many relationship and Award Winner table to normalize Award table and Winner Table relationship.
+There is also a relationship between Movie table and Winner table where a Movie can only have 1 oscar winner and there could be an oscar winner in many movie.
+My csv file contains information about the year of the award, name of the actor/actress, age, name of movie and their gender. I use the FAKER::Name to generate random names for the producer.
+</p>
+<p>
+These are the summary of my table and columns:
+<ul>
+    <li>
+Award table: Year
+    </li>
+    <li>
+Winner: Name, Age,Gender
+    </li>
+    <li>
+Movie: Name
+    </li>
+    <li>
+Producer:Name
+    </li>
+</ul>
+</p>
+<br/>
+<br/>
+<br/>
+<H1>
+    Entity-Relationship Diagram
+</H1>
+
+ <%=image_tag("erd.PNG")%>

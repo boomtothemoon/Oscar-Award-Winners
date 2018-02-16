@@ -12,10 +12,12 @@ Award.delete_all
 csv_wards = File.read(Rails.root.join('db', 'Celebrities.csv'))
 csv = CSV.parse(csv_wards, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |row|
+
     t = Award.new
     t.year = row[0]
     t.save
     puts "#{t.year}..........  saved"
+
 end
 
 Winner.delete_all
@@ -23,6 +25,9 @@ Winner.delete_all
 csv_wards = File.read(Rails.root.join('db', 'Celebrities.csv'))
 csv = CSV.parse(csv_wards, :headers => true, :encoding => 'ISO-8859-1')
 csv.each do |row|
+    csv_year = csv[:year]
+
+
     t = Winner.new
     t.age = row[1]
     t.name = row[2]
@@ -51,6 +56,11 @@ csv.each do |row|
     puts "#{y.name}.....  saved"
 
 end
+# require 'pp'
+# x = Award.first
+
+# pp x.winners.pluck(:name)
+
 
 
 
