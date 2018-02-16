@@ -3,7 +3,4 @@ class Winner < ApplicationRecord
     has_many :Awards, through: :AwardWinners
     has_many :Movies
     validates :name, :age, presence: true
-    ##test
-    ##test
-    ##test
 end
