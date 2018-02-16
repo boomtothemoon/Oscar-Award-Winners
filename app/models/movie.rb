@@ -1,6 +1,6 @@
 class Movie < ApplicationRecord
-    has_many :MovieProducer
-    has_many :Producer, through: :MovieProducer
+    has_many :MovieProducers
+    has_many :Producers, through: :MovieProducers
     belongs_to :Winner
     validates :name, presence: true
 end
