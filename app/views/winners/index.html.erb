@@ -8,6 +8,7 @@
   <%= submit_tag("Search") %>
 <% end %>
 
+
 <table>
   <thead>
     <tr>
@@ -19,7 +20,7 @@
   </thead>
 
   <tbody>
-    <% @winners.each do |winner| %>
+    <%  @winners.each do |winner| %>
       <tr>
         <td><%= winner.name %></td>
         <td><%= winner.age %></td>
@@ -31,6 +32,7 @@
     <% end %>
   </tbody>
 </table>
+<%= will_paginate @winners%>
 
 <br>
 

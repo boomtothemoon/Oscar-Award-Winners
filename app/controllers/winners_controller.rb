@@ -4,7 +4,7 @@ class WinnersController < ApplicationController
   # GET /winners
   # GET /winners.json
   def index
-    @winners = Winner.all
+    @winners = Winner.all.page(params[:page]).per_page(10)
   end
 
   # GET /winners/1
