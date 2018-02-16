@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @winner.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @winner.age %>
+</p>
+
+<%= link_to 'Edit', edit_winner_path(@winner) %> |
+<%= link_to 'Back', winners_path %>
