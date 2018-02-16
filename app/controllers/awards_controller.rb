@@ -4,7 +4,7 @@ class AwardsController < ApplicationController
   # GET /awards
   # GET /awards.json
   def index
-    @awards = Award.all
+    @awards = Award.all.page(params[:page]).per_page(10)
   end
 
   # GET /awards/1
